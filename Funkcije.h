@@ -36,7 +36,7 @@ if(fptr == NULL) {printf("Error opening file");}//najlakse provjerava da li file
 char buffer[200];
 
 fgets(buffer, 200, fptr);
-
+int i=0;
 while(!feof(fptr))
 {
 Studenti* p=studenti+i;
@@ -49,14 +49,13 @@ fgets(buffer, 200, fptr);
 sscanf(buffer, "%s",&p->prezime);
 
 fgets(buffer, 200, fptr);
-       //for petlja u ovom slucaju iz nekog razloga nije funkcionisala izgleda glupo trebam prepravit
 sscanf(buffer, "%d%s%d%s%d%s%d%s%d%s%d%s%d%s%d%s%d%s%d",&p->kviz[0],&trash[0], &p->kviz[1],&trash[0],&p->kviz[2],&trash[0],
        &p->kviz[3],&trash[0],&p->kviz[4],&trash[0], &p->kviz[5],&trash[0],&p->kviz[6],&trash[0], &p->kviz[7],&trash[0],&p->kviz[8],
-       &trash[0], &p->kviz[9]); 
+       &trash[0], &p->kviz[9]); //for petljom nije moglo iz nekog razloga, pitaj zasto, nvm mislim da je zbog pointera
 fgets(buffer, 200, fptr);
 
-fgets(buffer,200, fptr);
-
+fgets(buffer,200, fptr);//prilicno sam siguran da ovaj dio provjerava da li je kraj texta
+i++;
 };
 
 
